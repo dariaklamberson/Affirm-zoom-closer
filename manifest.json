@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Zoom Tab Closer",
+  "description": "This extension automatically closes (after 3 seconds) the browser tab that launches Affirm Zoom meetings.\nForked from  https://github.com/seanstar12/zoom-close",
+  "version": "1.0",
+
+  "icons": {
+    "16": "assets/icon-16.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+
+  "background": {
+    "scripts": [
+      "background.js" 
+    ] 
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://affirm.zoom.us/postattendee",
+        "https://affirm.zoom.us/j/*",
+        "https://affirm.zoom.us/s/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
